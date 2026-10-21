@@ -5,6 +5,12 @@ All notable changes to ClawTeam-OpenClaw are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning follows [PEP 440](https://peps.python.org/pep-0440/) with `+openclaw` local identifier.
 
+## [Unreleased]
+
+### Changed
+
+- MiniMax regional presets now default to MiniMax-M3.1-Flash, with explicit `minimax-cn-m3` and `minimax-global-m3` alternatives for MiniMax-M3. Saved profiles and local preset overrides remain unchanged.
+
 ## [0.3.0+openclaw2] - 2026-07-04
 
 ### Added

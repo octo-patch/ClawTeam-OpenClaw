@@ -134,7 +134,27 @@ def builtin_presets() -> dict[str, AgentPreset]:
             },
         ),
         "minimax-cn": claude_compatible_preset(
-            "MiniMax China Anthropic-compatible Claude Code endpoint.",
+            "MiniMax China Anthropic-compatible Claude Code endpoint (Flash default).",
+            "MINIMAX_API_KEY",
+            "https://api.minimaxi.com/anthropic",
+            "MiniMax-M3.1-Flash",
+            extra_env={
+                "API_TIMEOUT_MS": "3000000",
+                "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+            },
+        ),
+        "minimax-global": claude_compatible_preset(
+            "MiniMax global Anthropic-compatible Claude Code endpoint (Flash default).",
+            "MINIMAX_API_KEY",
+            "https://api.minimax.io/anthropic",
+            "MiniMax-M3.1-Flash",
+            extra_env={
+                "API_TIMEOUT_MS": "3000000",
+                "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+            },
+        ),
+        "minimax-cn-m3": claude_compatible_preset(
+            "MiniMax China Anthropic-compatible Claude Code endpoint (M3 fallback).",
             "MINIMAX_API_KEY",
             "https://api.minimaxi.com/anthropic",
             "MiniMax-M3",
@@ -143,8 +163,8 @@ def builtin_presets() -> dict[str, AgentPreset]:
                 "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
             },
         ),
-        "minimax-global": claude_compatible_preset(
-            "MiniMax global Anthropic-compatible Claude Code endpoint.",
+        "minimax-global-m3": claude_compatible_preset(
+            "MiniMax global Anthropic-compatible Claude Code endpoint (M3 fallback).",
             "MINIMAX_API_KEY",
             "https://api.minimax.io/anthropic",
             "MiniMax-M3",
